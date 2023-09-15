@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BillPayChecklist.Application", "BillPayChecklist.Application\BillPayChecklist.Application.csproj", "{4541801E-7F75-44D5-AE96-FD25AED85D74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BillPayChecklist.MVC", "BillPayChecklist.MVC\BillPayChecklist.MVC.csproj", "{DE3C4173-B91D-4429-A632-AD929D281548}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4541801E-7F75-44D5-AE96-FD25AED85D74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4541801E-7F75-44D5-AE96-FD25AED85D74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4541801E-7F75-44D5-AE96-FD25AED85D74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4541801E-7F75-44D5-AE96-FD25AED85D74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE3C4173-B91D-4429-A632-AD929D281548}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE3C4173-B91D-4429-A632-AD929D281548}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE3C4173-B91D-4429-A632-AD929D281548}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE3C4173-B91D-4429-A632-AD929D281548}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

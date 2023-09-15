@@ -1,0 +1,122 @@
+@font-face {
+    font-family: OperatorMono;
+    src: url('../fonts/operator-mono/Operator\ Mono\ Extra\ Light\ Nerd\ Font\ Complete.otf');
+}
+
+@font-face {
+    font-family: SFProDisplay;
+    src: url('../fonts/sf-pro-display/SF-Pro-Display-Regular.otf');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    font-family: 'SFProDisplay';
+}
+
+a {
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(40, 113, 207);
+}
+
+h3 {
+    padding: 10px 0;
+}
+
+hr {
+    margin-bottom: 5px;
+}
+
+label {
+    user-select: none;
+}
+
+table {
+    width: 100%;
+}
+
+table thead th {
+    text-align: left;
+    color: darkgray;
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+form input,
+form select {
+    font-size: 1em;
+    padding: 5px;
+    margin: 0 0 10px 0;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.flex.between {
+    justify-content: space-between;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    margin: 2px 0 10px 0;
+}
+
+.checkbox input {
+    margin: 0 5px 2px 0;
+}
+
+.button {
+    background: #b8b8b8;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    color: white;
+    font-size: .95em;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 7px 30px;
+    /* margin: 6px 0; */
+    cursor: pointer;
+}
+
+.secondary {
+    background: #b8b8b8;
+    color: white;
+}
+
+.primary {
+    background: rgb(40, 113, 207);
+    color: white;
+}
+
+.container {
+    background: transparent;
+    height: 100vh;
+    padding: 15px 0;
+}
+
+.container .box {
+    background: whitesmoke;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+
+
