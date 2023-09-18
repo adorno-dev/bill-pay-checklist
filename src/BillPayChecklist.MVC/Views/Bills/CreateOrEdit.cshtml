@@ -1,7 +1,9 @@
+@model Bill
+
 <h3>New Bill</h3>
 <hr>
 <form class="form-bill" action="#" method="post">
-    <input class="w100" type="text" name="title" placeholder="Title">
+    <input class="w100" type="text" name="title" placeholder="Title" value="@Model.Title" />
     <div class="flex">
         <select name="dueday">
             <option>Day</option>

@@ -1,3 +1,5 @@
+@model List<Bill>
+
 <h3>Bill List</h3>
 <hr>
 <div class="flex-between">
@@ -15,27 +17,20 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>blablabalbal blabalblal</td>
-            <td>10</td>
-            <td>Dec</td>
-            <td>Yes</td>
-            <td>
-                <a href="#">Edit</a>
-                <span>/</span>
-                <a href="#">Delete</a>
-            </td>
-        </tr>
-        <tr>
-            <td>blablabalbal blabalblal</td>
-            <td>10</td>
-            <td>Dec</td>
-            <td>Yes</td>
-            <td>
-                <a href="#">Edit</a>
-                <span>/</span>
-                <a href="#">Delete</a>
-            </td>
-        </tr>
+        @foreach (var bill in Model)
+        {
+            <tr>
+                <td>@bill.Title</td>
+                <td>@bill.DueDay</td>
+                <td>@bill.RefMonth</td>
+                <td>@(bill.Recurrent ? "Yes": "No")</td>
+                <td>
+                    <a asp-controller="bills" asp-action="edit" asp-route-id="@bill.Id">Edit</a>
+                    <span>/</span>
+                    <a asp-controller="bills" asp-action="delete" asp-route-id="@bill.Id">Delete</a>
+
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
