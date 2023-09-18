@@ -34,29 +34,40 @@ label {
     user-select: none;
 }
 
-table {
-    width: 100%;
+textarea,
+input {
+    padding: 6px 10px;
 }
 
-table thead th {
-    text-align: left;
-    color: darkgray;
-    border-bottom: 1px solid gray;
-    padding-bottom: 10px 0;
+select {
+    padding: 5px 10px;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    margin: 10px 0;
-}
-
-form input,
-form select {
+input[typpe="text"],
+input[typpe="number"],
+input,
+select,
+textarea {
+    border: 1px solid #dcdcdc;
     font-size: 1em;
-    padding: 5px;
+    border-radius: 5px;
     margin: 0 0 10px 0;
 }
+
+form > div {
+    display: flex;
+}
+
+/* form .form-bottom {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+} */
+
+.w100 { width: 100%;}
+.w75 { width: 75%;}
+.w50 { width: 50%;}
+.w25 { width: 25%;}
 
 .txt-center {
     text-align: center;
@@ -68,8 +79,18 @@ form select {
     gap: 5px;
 }
 
-.flex.between {
+.flex-between {
+    display: flex;
+    align-items: center;
     justify-content: space-between;
+    gap: 5px;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 }
 
 .checkbox {
@@ -119,4 +140,26 @@ form select {
     padding: 10px 15px;
 }
 
+.table-bills {
+    width: 100%;
+}
 
+.table-bills th {
+    color: darkgray;
+    border-bottom: 1px solid gray;
+    padding: 4px 0;
+}
+
+.table-bills td {
+    padding: 2px 0;
+}
+
+.table-bills tr th:first-child,
+.table-bills tr td:first-child {
+    text-align: left;
+}
+
+.table-bills tr th,
+.table-bills tr td {
+    text-align: center;
+}
