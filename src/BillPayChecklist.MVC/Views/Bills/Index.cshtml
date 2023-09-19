@@ -22,13 +22,12 @@
             <tr>
                 <td>@bill.Title</td>
                 <td>@bill.DueDay</td>
-                <td>@bill.RefMonth</td>
+                <td>@((MonthEnum) bill.RefMonth)</td>
                 <td>@(bill.Recurrent ? "Yes": "No")</td>
                 <td>
                     <a asp-controller="bills" asp-action="edit" asp-route-id="@bill.Id">Edit</a>
                     <span>/</span>
                     <a asp-controller="bills" asp-action="delete" asp-route-id="@bill.Id">Delete</a>
-
                 </td>
             </tr>
         }

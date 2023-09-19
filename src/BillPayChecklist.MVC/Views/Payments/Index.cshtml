@@ -21,7 +21,7 @@
         {
             <tr>
                 <td><a asp-controller="payments" asp-action="view" asp-route-id="@payment.Id">@payment.Bill?.Title</a></td>
-                <td>@payment.RefMonth</td>
+                <td>@((MonthEnum) payment.RefMonth)</td>
                 <td>@payment.PaymentDate.ToString("yyyy-MM-dd")</td>
                 <td>R$ @payment.Amount</td>
                 <td>

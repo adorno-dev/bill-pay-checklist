@@ -1,32 +1,21 @@
 @model Bill
 
-<h3>New Bill</h3>
+<h3>@(Model.Id == Guid.Empty ? "New": "Edit") Bill</h3>
 <hr>
 <form class="form-bill" action="#" method="post">
+
+    @if (Model.Id != Guid.Empty)
+    {
+        <input type="hidden" name="id" value="@Model.Id" />        
+    }
+
     <input class="w100" type="text" name="title" placeholder="Title" value="@Model.Title" />
     <div class="flex">
-        <select name="dueday">
-            <option>Day</option>
-            @for (int i = 1; i <= 31; i++) { <option value="@i">@i.ToString("D2")</option> }
-        </select>
-        <select name="refmonth">
-            <option>Month</option>
-            <option value="1">January</option>
-            <option value="2">February</option>
-            <option value="3">March</option>
-            <option value="4">April</option>
-            <option value="5">May</option>
-            <option value="6">June</option>
-            <option value="7">July</option>
-            <option value="8">August</option>
-            <option value="9">September</option>
-            <option value="10">October</option>
-            <option value="11">November</option>
-            <option value="12">December</option>
-        </select>
+        <select name="dueday" asp-items="@ViewBag.DueDayList"></select>
+        <select name="refmonth" asp-items="@ViewBag.MonthList"></select>
     </div>
     <div class="checkbox">
-        <input type="checkbox" name="recurrent" id="recurrent" />
+        <input type="checkbox" name="recurrent" id="recurrent" @(Model.Recurrent ? "checked" : "") />
         <label for="recurrent">Recurrent</label>
     </div>
     <div class="flex-center">

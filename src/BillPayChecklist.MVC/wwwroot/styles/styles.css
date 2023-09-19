@@ -1,4 +1,9 @@
 @font-face {
+    font-family: InterRegular;
+    src: url('../fonts/inter/static/Inter-Regular.ttf');
+}
+
+@font-face {
     font-family: OperatorMono;
     src: url('../fonts/operator-mono/Operator\ Mono\ Extra\ Light\ Nerd\ Font\ Complete.otf');
 }
@@ -13,7 +18,7 @@
     margin: 0;
     padding: 0;
 
-    font-family: 'SFProDisplay';
+    font-family: 'InterRegular';
 }
 
 a {
@@ -67,6 +72,7 @@ form > div {
 .w100 { width: 100%;}
 .w75 { width: 75%;}
 .w50 { width: 50%;}
+.w30 { width: 30%;}
 .w25 { width: 25%;}
 
 .txt-center {
