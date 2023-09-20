@@ -3,16 +3,6 @@
     src: url('../fonts/inter/static/Inter-Regular.ttf');
 }
 
-@font-face {
-    font-family: OperatorMono;
-    src: url('../fonts/operator-mono/Operator\ Mono\ Extra\ Light\ Nerd\ Font\ Complete.otf');
-}
-
-@font-face {
-    font-family: SFProDisplay;
-    src: url('../fonts/sf-pro-display/SF-Pro-Display-Regular.otf');
-}
-
 * {
     box-sizing: border-box;
     margin: 0;
