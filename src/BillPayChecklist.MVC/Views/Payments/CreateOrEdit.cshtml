@@ -5,9 +5,7 @@
 <form action="#" method="post">
 
     @if (Model.Id != Guid.Empty)
-    {
-        <input type="hidden" name="id" value="@Model.Id" />        
-    }
+    { <input type="hidden" name="id" value="@Model.Id" /> }
 
     <select class="w100" name="billid" asp-items="@ViewBag.BillList"></select>
     <div class="flex-between">

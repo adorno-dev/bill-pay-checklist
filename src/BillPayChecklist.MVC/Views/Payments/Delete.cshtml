@@ -1,0 +1,24 @@
+@model Payment
+
+<h3>Delete Payment</h3>
+<hr>
+<form action="#" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <select class="w100" disabled>
+        <option>@Model.Bill?.Title</option>
+    </select>
+    <div class="flex-between">
+        <select class="w30" name="refmonth" disabled>
+            <option>@((MonthEnum)Model.RefMonth)</option>
+        </select>
+        <input class="w30 txt-center" type="date" name="payment_date" id="payment_date" value="@Model.PaymentDate.ToString("yyyy-MM-dd")" disabled />
+        <input class="w30 txt-center" type="number" name="amount" placeholder="R$ 0,00" value="@Model.Amount" disabled>
+    </div>
+    <div class="flex-center">
+        <textarea class="w100" name="comments" id="comments" rows="5" disabled>@Model.Comment</textarea>
+    </div>
+    <div class="flex-center">
+        <a class="button" asp-controller="payments" asp-action="index">Cancel</a>
+        <button class="button danger" type="submit">Confirm</button>
+    </div>
+</form>

@@ -5,9 +5,7 @@
 <form class="form-bill" action="#" method="post">
 
     @if (Model.Id != Guid.Empty)
-    {
-        <input type="hidden" name="id" value="@Model.Id" />        
-    }
+    { <input type="hidden" name="id" value="@Model.Id" /> }
 
     <input class="w100" type="text" name="title" placeholder="Title" value="@Model.Title" />
     <div class="flex">

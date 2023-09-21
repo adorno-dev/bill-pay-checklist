@@ -53,17 +53,13 @@ form > div {
     display: flex;
 }
 
-/* form .form-bottom {
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-} */
-
 .w100 { width: 100%;}
 .w75 { width: 75%;}
 .w50 { width: 50%;}
 .w30 { width: 30%;}
 .w25 { width: 25%;}
+
+.my10 { margin: 10px 0 }
 
 .txt-center {
     text-align: center;
@@ -112,6 +108,11 @@ form > div {
     cursor: pointer;
 }
 
+.danger {
+    background: rgb(224, 58, 58);
+    color: white;
+}
+
 .secondary {
     background: #b8b8b8;
     color: white;
@@ -123,6 +124,7 @@ form > div {
 }
 
 .container {
+    position: relative;
     background: transparent;
     height: 100vh;
     padding: 15px 0;

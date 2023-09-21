@@ -1,6 +1,8 @@
 @* @{ string cssIsolation = string.Concat(AppDomain.CurrentDomain.FriendlyName, ".styles.css"); } *@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +10,13 @@
     @* <link rel="stylesheet" href="@cssIsolation" /> *@
     <title>Bill Pay Checklist</title>
 </head>
-<body>
 
+<body>
     <div class="container">
         <div class="box">
             @RenderBody()
         </div>
     </div>
-
 </body>
+
 </html>

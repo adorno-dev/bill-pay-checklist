@@ -1,0 +1,25 @@
+@model Bill
+
+<h3>Delete Bill</h3>
+<hr>
+<form class="form-bill" action="#" method="post">
+    <h4 class="my10">Are you sure you want to delete this bill?</h4>
+    <input type="hidden" name="id" value="@Model.Id" />
+    <input class="w100" type="text" name="title" placeholder="Title" value="@Model.Title" disabled />
+    <div class="flex">
+        <select name="dueday" disabled>
+            <option>@Model.DueDay.ToString("D2")</option>
+        </select>
+        <select name="refmonth" disabled>
+            <option>@((MonthEnum)Model.RefMonth)</option>
+        </select>
+    </div>
+    <div class="checkbox">
+        <input type="checkbox" name="recurrent" id="recurrent" @(Model.Recurrent ? "checked" : "") disabled />
+        <label for="recurrent">Recurrent</label>
+    </div>
+    <div class="flex-center">
+        <a class="button" asp-controller="bills" asp-action="index">Cancel</a>
+        <button class="button danger" type="submit">Confirm</button>
+    </div>
+</form>

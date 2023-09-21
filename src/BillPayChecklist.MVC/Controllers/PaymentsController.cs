@@ -95,5 +95,13 @@ namespace BillPayChecklist.MVC.Controllers
 
             return View("CreateOrEdit", payment);
         }
+
+        [HttpGet("delete/{id}")]
+        public IActionResult Delete(Guid id)
+        {
+            var payment = payments.Find(b => b.Id == id);
+
+            return View(payment);
+        }
     }
 }
