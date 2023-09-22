@@ -2,7 +2,7 @@
 
 <h3>@(Model.Id == Guid.Empty ? "New": "Edit") Bill</h3>
 <hr>
-<form class="form-bill" action="#" method="post">
+<form class="form-bill" asp-controller="bills" asp-action="@(Model.Id == Guid.Empty ? "new" : "edit")" method="post">
 
     @if (Model.Id != Guid.Empty)
     { <input type="hidden" name="id" value="@Model.Id" /> }
