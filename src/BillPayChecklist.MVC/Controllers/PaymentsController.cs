@@ -1,6 +1,7 @@
 using System.Threading.RateLimiting;
 using BillPayChecklist.Application.Entities;
 using BillPayChecklist.Application.Enums;
+using BillPayChecklist.MVC.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -9,16 +10,16 @@ namespace BillPayChecklist.MVC.Controllers
     [Route("payments")]
     public class PaymentsController : Controller
     {
-        private static List<Bill> bills = new List<Bill>()
+        private static List<BillViewModel> bills = new List<BillViewModel>()
         {
-            new Bill { Id = Guid.Parse("91046f47-b6bf-46d9-8c6e-77ff27aa9661"), Title = "Bill Ref #101", DueDay = 10, RefMonth = 9, Recurrent = true },
-            new Bill { Id = Guid.Parse("47f6ea7b-e1b2-4377-bb29-deae0ce329e0"), Title = "Bill Ref #207", DueDay = 5, RefMonth = 8, Recurrent = true },
-            new Bill { Id = Guid.Parse("cbaddf25-aab4-4d27-8cbb-14130ea5c015"), Title = "Bill Ref #305", DueDay = 8, RefMonth = 9, Recurrent = true },
+            new BillViewModel { Id = Guid.Parse("91046f47-b6bf-46d9-8c6e-77ff27aa9661"), Title = "Bill Ref #101", DueDay = 10, RefMonth = 9, Recurrent = true },
+            new BillViewModel { Id = Guid.Parse("47f6ea7b-e1b2-4377-bb29-deae0ce329e0"), Title = "Bill Ref #207", DueDay = 5, RefMonth = 8, Recurrent = true },
+            new BillViewModel { Id = Guid.Parse("cbaddf25-aab4-4d27-8cbb-14130ea5c015"), Title = "Bill Ref #305", DueDay = 8, RefMonth = 9, Recurrent = true },
         };
 
-        private static List<Payment> payments = new List<Payment>()
+        private static List<PaymentViewModel> payments = new List<PaymentViewModel>()
         {
-            new Payment 
+            new PaymentViewModel 
             { 
                 Id = Guid.Parse("4895b6cc-4a78-43ee-8aa5-4424a7a435f5"), 
                 Bill = bills.Find(x => x.Id == Guid.Parse("91046f47-b6bf-46d9-8c6e-77ff27aa9661")),
@@ -27,7 +28,7 @@ namespace BillPayChecklist.MVC.Controllers
                 Amount = 165.78M,
                 BillId = Guid.Parse("91046f47-b6bf-46d9-8c6e-77ff27aa9661")
             },
-            new Payment { 
+            new PaymentViewModel { 
                 Id = Guid.Parse("ecd78c14-21d6-4b01-8578-48d29120e9cc"), 
                 Bill = bills.Find(x => x.Id == Guid.Parse("47f6ea7b-e1b2-4377-bb29-deae0ce329e0")),
                 PaymentDate = new DateOnly(2023, 8, 20), 
@@ -35,7 +36,7 @@ namespace BillPayChecklist.MVC.Controllers
                 Amount = 201.78M,
                 BillId = Guid.Parse("47f6ea7b-e1b2-4377-bb29-deae0ce329e0")
             },
-            new Payment { 
+            new PaymentViewModel { 
                 Id = Guid.Parse("0e1c1010-d534-4879-88ee-afc3f8a1df40"), 
                 Bill = bills.Find(x => x.Id == Guid.Parse("cbaddf25-aab4-4d27-8cbb-14130ea5c015")),
                 PaymentDate = new DateOnly(2023, 9, 13), 
@@ -77,7 +78,7 @@ namespace BillPayChecklist.MVC.Controllers
         [HttpGet("new")]
         public IActionResult New()
         {
-            var payment = new Payment() { PaymentDate = DateOnly.FromDateTime(DateTime.Now) };
+            var payment = new PaymentViewModel() { PaymentDate = DateOnly.FromDateTime(DateTime.Now) };
             
             setBillSelectList();
             setMonthSelectList();

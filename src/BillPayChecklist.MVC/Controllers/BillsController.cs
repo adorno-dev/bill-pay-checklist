@@ -1,5 +1,6 @@
 using BillPayChecklist.Application.Entities;
 using BillPayChecklist.Application.Enums;
+using BillPayChecklist.MVC.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -8,11 +9,11 @@ namespace BillPayChecklist.MVC.Controllers
     [Route("bills")]
     public class BillsController : Controller
     {
-        private static List<Bill> bills = new List<Bill>()
+        private static List<BillViewModel> bills = new List<BillViewModel>()
         {
-            new Bill { Id = Guid.Parse("91046f47-b6bf-46d9-8c6e-77ff27aa9661"), Title = "Bill Ref #101", DueDay = 10, RefMonth = 9, Recurrent = false },
-            new Bill { Id = Guid.Parse("47f6ea7b-e1b2-4377-bb29-deae0ce329e0"), Title = "Bill Ref #207", DueDay = 5, RefMonth = 8, Recurrent = true },
-            new Bill { Id = Guid.Parse("cbaddf25-aab4-4d27-8cbb-14130ea5c015"), Title = "Bill Ref #305", DueDay = 8, RefMonth = 9, Recurrent = true },
+            new BillViewModel { Id = Guid.Parse("91046f47-b6bf-46d9-8c6e-77ff27aa9661"), Title = "Bill Ref #101", DueDay = 10, RefMonth = 9, Recurrent = false },
+            new BillViewModel { Id = Guid.Parse("47f6ea7b-e1b2-4377-bb29-deae0ce329e0"), Title = "Bill Ref #207", DueDay = 5, RefMonth = 8, Recurrent = true },
+            new BillViewModel { Id = Guid.Parse("cbaddf25-aab4-4d27-8cbb-14130ea5c015"), Title = "Bill Ref #305", DueDay = 8, RefMonth = 9, Recurrent = true },
         };
 
         private void setDueDaySelectList(int? id = null)
@@ -45,7 +46,7 @@ namespace BillPayChecklist.MVC.Controllers
             setMonthSelectList();
             setDueDaySelectList();
 
-            return View("CreateOrEdit", new Bill());
+            return View("CreateOrEdit", new BillViewModel());
         }
 
         [HttpGet("edit/{id}")]

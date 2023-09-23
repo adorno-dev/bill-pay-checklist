@@ -2,7 +2,7 @@ namespace BillPayChecklist.MVC.ViewModels
 {
     public class BillViewModel
     {
-        public Guid? Id { get; set; }
+        public Guid Id { get; set; }
         public string? Title { get; set; }
         public int DueDay { get; set; }
         public int RefMonth { get; set; }

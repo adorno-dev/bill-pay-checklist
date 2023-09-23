@@ -1,8 +1,8 @@
-@model Payment
+@model PaymentViewModel
 
 <h3>@(Model.Id == Guid.Empty ? "New": "Edit") Payment</h3>
 <hr>
-<form action="#" asp-controller="payments" asp-action="@(Model.Id == Guid.Empty ? "new" : "edit")" method="post">
+<form asp-controller="payments" asp-action="@(Model.Id == Guid.Empty ? "new" : "edit")" method="post">
 
     @if (Model.Id != Guid.Empty)
     { <input type="hidden" name="id" value="@Model.Id" /> }
